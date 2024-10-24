@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>online food delivery</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/images/logo5.jpg" alt="" class="logo-img">
+             <h1 class="logo"> FoodiesHub</h1>
+        </div>
+        <div class="sidebar-menus">
+            <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+                <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+                <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div>
+        <div class="sidebar-logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    
+        </div>
+    </div>
+    <!-- main -->
+     <div class="main">
+            <div class="main-navbar">
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <div class="search">
+                    <input type="text"placeholder="what you want to eat?" class="search-input">
+                    <button class="search-btn">Search</button>
+                </div>
+            <!-- profile icon on left side of navbar -->
+                <div class="profile">
+                    <a class="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a>
+                    <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+                </div>
+            </div>
+            <!-- main highlight -->
+             <div class="main-highlight">
+                <!-- title section and arrow -->
+                 <div class="main-header">
+                    <h2 class="main-title">Recommendations</h2>
+                    <div class="main-arrow">
+                        <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                        <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+                    </div>
+                 </div>
+                 <div class="highlight-wrapper">
+                    <div class="highlight-card">
+                        <img class="highlight-img"   src="/images/grid_image5.png" alt="">
+                        <div class="highlight-desc">
+                            <h4>Omlette</h4>
+                            <p>Rs.50</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <img class="highlight-img" src="/images/grid_image1.png" alt="">
+                        <div class="highlight-desc">
+                            <h4>South Meal</h4>
+                            <p>Rs.200</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <img class="highlight-img"  src="/images/grid_image7.png" alt="">
+                        <div class="highlight-desc">
+                            <h4></h4>
+                            <p>Rs.200</p>
+                        </div>
+                    </div>
+
+                 </div>
+             </div>
+     </div>
+
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
