@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
-    <link rel="stylesheet" href="stylesignup.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="signup-container">
-        <div class="logo-bar">
-            <img src="/images/logo6.jpg" alt="" class="logo-img">
-            <h2>Signup</h2>
-        </div>
+      <div class="signup-container">
+        <div><img src="foodieshublogo.png" alt="" class="logo-img"></div>
+        <div><h2>Signup</h2></div>
         <form id="signupForm">
             <div class="input-group">
                 <label for="name">Name:</label>
@@ -33,10 +31,12 @@
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
             </div>
-            <button type="submit" id="signupButton">Signup</button>
+            <a href="index.html">
+                <button type="submit" id="signupButton" class="">Signup</button>
+            </a>
         </form>
     </div>
 
-    <script src="scriptsignup.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>

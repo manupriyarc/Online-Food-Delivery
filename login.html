@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="login-container">
-        <div class="login-bar">
-            <img src="/images/logo6.jpg" alt="" class="logo-img">
-            <h2>Login</h2>
-        </div>
+        <div><img src="foodieshublogo.png" alt="" class="logo-img"></div>
+        <div><h2>Login</h2></div>
+        
         <form id="loginForm" onsubmit="return validateForm()">
             <div class="input-group">
                 <label for="email">Email:</label>
@@ -21,11 +20,15 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit">Login</button>
-            <p id="error-message" class="error"></p>
+            <!-- <a type="submit" class="login-btn">Login</a> -->
+            <a href="index.html">
+                <button type="submit" id="signupButton">Login</button>
+            </a>
+            <p id="errormessage" class="error"></p>
         </form>
     </div>
-
-    <script src="scriptlogin.js"></script>
+    
+    <script src="login.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </body>
 </html>
