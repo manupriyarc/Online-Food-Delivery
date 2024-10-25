@@ -19,14 +19,14 @@
         </div>
         <div class="sidebar-menus">
             <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
-            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="bills.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
             <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
             <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
                 <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
                 <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
         </div>
         <div class="sidebar-logout">
-            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="startpage.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
     
         </div>
     </div>
@@ -40,10 +40,33 @@
                 </div>
             <!-- profile icon on left side of navbar -->
                 <div class="profile">
-                    <a class="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a>
+                    <!-- <a class="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a>
+                    <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a> -->
+                    <a class="cart" href="#" onclick="toogleCartPopup()">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count" id="cart-count">0</span>
+                    </a>
                     <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
                 </div>
             </div>
+            <!--shopping cart section-->
+            <div id="cart-popup" class="cart-popup">
+                <h4>Shopping Cart</h4>
+                <table id="cart-items">
+                    <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Count</th>
+                            <th>Price(Rs)</th>
+                            <th>Total(Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p>Total(Rs) <span id="cart-total">0.00</span></p>
+                <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+            </div>
+
             <!-- main highlight -->
              <div class="main-highlight">
                 <!-- title section and arrow -->
@@ -214,8 +237,10 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                         <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                     </svg>
-                                    <p class="prize">199</p>
+                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
                                 </div>
+                                <button class="add-to-cart-btn" onclick="addToCart('pizza',199.00)">Add To cart</button>
+                       
                             </div>
                             <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -228,11 +253,12 @@
                               <h4>Momos</h4>
                               <p class="detail-sub">Momos are filled with a variety of fillings, such as vegetables, chicken, pork, or paneer.served with variety of sauces, gravies, and condiments.</p>
                               <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="prize">99</p>
-                            </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                    </svg>
+                                    <p class="price"><i class="fa fa-rupee"></i> 99</p>
+                             </div>
+                             <button class="add-to-cart-btn" onclick="addToCart('momos',99.00)">Add To cart</button>
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -248,8 +274,10 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                         <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                     </svg>
-                                    <p class="prize">129</p>
+                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
+                                    
                                 </div>
+                                <button class="add-to-cart-btn" onclick="addToCart('pasta',199.00)">Add To cart</button>
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -265,8 +293,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                 </svg>
-                                <p class="prize">249</p>
-                            </div>
+                                <p class="price"><i class="fa fa-rupee"></i> 249</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('Hyderabadi Biriyani',249.00)">Add To cart</button>
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -282,8 +311,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                 </svg>
-                                <p class="prize">499</p>
-                            </div>
+                                <p class="price"><i class="fa fa-rupee"></i> 499</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('thali',499.00)">Add To cart</button>                            
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -294,13 +324,14 @@
                         <div class="detail-desc">
                             <div class="detail-name">
                               <h4>Hot Cappuccino</h4>
-                              <p class="detail-sub">Beverage brewed from the roasted and ground seeds of the tropical evergreen coffee plants of African origin. Coffee is one of the most popular beverages.</p>
+                              <p class="detail-sub">Beverage brewed from roasted and ground seeds of tropical evergreen coffee plants of African origin. Coffee is one of the most popular beverages.</p>
                               <div class="rupee rupee1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                 </svg>
-                                <p class="prize">199</p>
-                            </div>
+                                <p class="price"><i class="fa fa-rupee"></i> 199</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('cofee',199.00)">Add To cart</button>
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -316,8 +347,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                 </svg>
-                                <p class="prize">99</p>
+                                <p class="price"><i class="fa fa-rupee"></i> 99</p>                                
                             </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('mojito',99.00)">Add To cart</button>                      
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
@@ -333,8 +365,10 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                                 </svg>
-                                <p class="prize">89</p>
-                            </div>
+                                <p class="price"><i class="fa fa-rupee"></i> 199</p>                              
+                      
+                              </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('icecream',199.00)">Add To cart</button>
                            </div>
                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
                         </div>
