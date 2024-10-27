@@ -74,7 +74,7 @@ header {
 .auth-buttons {
     display: flex;
     gap: 15px;
-    margin-left:330px;
+    margin-left:260px;
     width: 60px;
     height: 40px;
     margin-top: 22px;

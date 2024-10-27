@@ -1,17 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bills Section</title>
-    <link rel="stylesheet" href="bills.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="search.css">
+    <title>Menu Search</title>
 </head>
 <body>
-
     <div class="sidebar">
         <div class="logo">
             <img src="logo.jpg" alt="" class="logo-img">
@@ -32,41 +27,15 @@
         </div>
     </div>
 
-    <div class="bills-container">
-        <h2>Your Orders</h2>
+        <input type="text" id="searchBar" placeholder="Search for menu items...">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
 
-        <table id="cart-items">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price (Rs)</th>
-                    <th>Total (Rs)</th>
-                </tr>
-            </thead>
-            <tbody id="cart-body">
-                <!-- Cart items will be dynamically generated here -->
-            </tbody>
-        </table>
-
-        <div class="order-summary">
-            <p><strong>Subtotal:</strong> ₹<span id="subtotal">0.00</span></p>
-            <button id="order-btn">Order Now</button>
-        </div>
-
-        <div id="print-section" class="hidden">
-            <h2>Bill Summary</h2>
-            <div id="bill-items"></div>
-            <p><strong>Total Bill: </strong> ₹<span id="total-bill">0.00</span></p>
-            <button onclick="printBill()">Print Bill</button>
-        </div>
-    </div>
-
-    <script src="bills.js"></script>
+    <div id="results"></div>
+    <script src="search.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      
 </body>
-</html> 
- 
-
+</html>

@@ -39,8 +39,8 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 40px;
-    margin-top: -5px;
-    color: rgba(181, 17, 17, 0.718);
+    margin-top: -37px;
+    color: var(--primaryColor);
 }
 
 .input-group {
@@ -67,8 +67,8 @@ button{
     border: none;
     border-radius:21px;
     cursor: pointer;
-    margin-top: 5px;
-    text-decoration: none;
+    margin-top: 15px;
+    /* text-decoration: none; */
 }
 
 button:hover {
@@ -84,10 +84,16 @@ button:hover {
 }
 .logo-img
 {
-        width: 200px;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 50%;
         top: 30px;
-        margin-top: 15px;
-        transform: translate(16%,-30%);
-        /* left: auto; */
-    
+        /* margin-top: 15px;
+        transform: translate(16%,-30%); */
+        left: auto;
+}
+.logo-bar
+{
+    align-items: center;
 }

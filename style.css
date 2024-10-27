@@ -41,10 +41,12 @@ body{
 }
 .logo-img
 {
-    width: 240px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     object-fit: cover;
-    margin-left: 20px;
-    margin-top: -12px;
+    margin-left: 8px;
+    margin-top: -15px;
 }
 /* .logo-img:hover{
     background-image: url("/images/logo5.jpg");
@@ -54,10 +56,21 @@ body{
 {
     display: flex;
     left: 15px;
-    margin-left: -25px;
+    margin-left: -30px;
     align-items: center;
     gap: 30px;
-    margin-top: 10px;
+    margin-top: 18px;
+}
+.logo-title
+{
+    margin-top: -18px;
+    margin-left: -28px;
+}
+.about-img
+{
+    width: 25px;
+    color: white;
+    
 }
 .sidebar-menus{
     display: flex;

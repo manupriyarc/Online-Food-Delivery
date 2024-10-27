@@ -35,7 +35,7 @@ body {
 
 h2 {
     text-align: center;
-    /* margin-top: -36px; */
+    margin-top: -36px;
     margin-bottom: 32px;
     color: rgba(181, 17, 17, 0.718);
 }
@@ -80,9 +80,18 @@ button:hover {
 }
 .logo-img
 {
-    width: 200px;
-    top: 30px;
-    margin-top: 15px;
-    transform: translate(29%,-30%);
-    /* left: auto; */
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+            top: 30px;
+            /* margin-top: 15px;
+            transform: translate(16%,-30%); */
+            left: auto;
+        
 }
+.logo-bar
+{
+    align-items: center;
+}
+
