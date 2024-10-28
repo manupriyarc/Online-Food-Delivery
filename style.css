@@ -164,6 +164,7 @@ body{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    
 }
 
 .cart, .user
@@ -189,6 +190,25 @@ body{
     padding: 2%;
     background-color: var(--secondrayColor);
     border-radius: 8px;
+}
+.main-navbar{
+    margin-top: 15px;
+}
+.logo-menu
+{
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* top: 10px; */
+}
+.menuuu
+{
+    cursor: pointer;
+}
+.menuuu:hover{
+    box-shadow: rgba(65, 165, 211, 0.313) 0px 8px 24px;
+
 }
 .main-header
 {
@@ -413,6 +433,7 @@ body{
     color: var(--darkGreyColor);
     letter-spacing: 0.6;
     margin: 1% 0;
+    width: 210px;
 
 }
 
@@ -424,8 +445,8 @@ body{
 
 .detail-favorites
 {
-    font-size: 60px;
-    margin-top: -12px;
+    font-size: 20px;
+    /* margin-top: -12px; */
 
 }
 
@@ -524,7 +545,29 @@ padding: 5px;
     color: var(--blackColor);
 
 }
+.order-button
+{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
 
+}
+.order-button:hover{
+    background-color: #45a049;
+}
+.foot
+{
+     display: flex;
+     margin-top: 30px;
+     margin-left: 40%;
+     align-items: center;
+     gap: 10px;
+}
 /* mobile view */
 @media screen  and (max-width:640px)
 {

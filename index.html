@@ -19,11 +19,11 @@
         
         <div class="sidebar-menus">
             <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
-            <a href="bills.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="order2.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
             <a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>About Us</a>
-            <a href="search.html"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>Search</a>
+            <a href="finalsearch.html"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>Search</a>
             <a href="contactus.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
-            <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+            <a href="settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
         </div>
         <div class="sidebar-logout">
             <a href="startpage.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
@@ -34,14 +34,19 @@
      <div class="main">
             <div class="main-navbar">
                 <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
-                <div class="search">
+                <!-- <div class="search">
                     <input type="text"placeholder="what you want to eat?" class="search-input" style="padding-top: 23px;">
                     <button class="search-btn">Search</button>
-                </div>
+                </div> -->
             <!-- profile icon on left side of navbar -->
+             <div class="logo-menu">
+                <a href="finalsearch.html"><svg class="menuuu" xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg></a>
+                <h2>Menus</h2>
+            </div>
                 <div class="profile">
-                    <!-- <a class="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a>
-                    <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a> -->
+                   
                     <a class="cart" href="#" onclick="toogleCartPopup()">
                         <ion-icon name="cart-outline"></ion-icon>
                     <span class="cart-count" id="cart-count">0</span>
@@ -64,6 +69,7 @@
                     <tbody></tbody>
                 </table>
                 <p>Total(Rs) <span id="cart-total">0.00</span></p>
+                <button id="order-now" class="order-button" onclick="orderBtn()">Order Now</button>
                 <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
             </div>
 
@@ -324,7 +330,7 @@
                         <div class="detail-desc">
                             <div class="detail-name">
                               <h4>Hot Cappuccino</h4>
-                              <p class="detail-sub">Beverage brewed from roasted and ground seeds of tropical evergreen coffee plants of African origin. Coffee is one of the most popular beverages.</p>
+                              <p class="detail-sub">Beverage brewed from roasted and ground seeds of tropical evergreen coffee plants of African origin.It is one of the most popular beverages.</p>
                               <div class="rupee rupee1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
@@ -342,7 +348,7 @@
                         <div class="detail-desc">
                             <div class="detail-name">
                               <h4>Mojitho</h4>
-                              <p class="detail-sub">A traditional Cuban punch. The cocktail often consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint.</p>
+                              <p class="detail-sub">Traditional Cuban punch.The cocktail often consists of 5 ingredients:white rum, sugar(traditionally cane juice), lime juice, soda and mint.</p>
                               <div class="rupee rupee1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
                                     <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
@@ -376,10 +382,18 @@
                 </div>
      
              </div>
+             <footer class="foot">
+                <h4>Copyright 2024</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+                    <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
+                  </svg>
+                  <h4>FoodiesHub</h4>
+
+             </footer>
 
 
 </body>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      <!-- adding javascript -->
       <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
