@@ -28,29 +28,36 @@
         input[type="text"], input[type="number"] {
             width: 96.5%;
             padding: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             border: 2px solid #979797;
             border-radius: 4px;
         }
         .button {
-            width: 95%;
-            padding: 20px;
+            width: 90%;
+            height: 40px;
             color: white;
             background-color: #0e6253; /* Primary Color */
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 70px;
-            margin-left: 10px;
+            font-size: 17px;
+            margin-top: 42px;
+            margin-left: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+           
         }
         .button:hover {
             background-color: #107764;
+            box-shadow: 0 0 10px rgba(14, 14, 14, 0.5);
         }
+        
         .hidden {
             display: none;
+            
+        }
+        .button hidden
+        {
+            margin-bottom: 18px;
         }
         /* Delivery boy image styling */
         #deliveryBoy {
@@ -58,7 +65,7 @@
             height: 180px;
             bottom: 550px;
             left: 430px; /* Start off screen */
-            width: 250px;
+            width: 270px;
             transition: transform 5s ease;
         }
        
@@ -137,7 +144,7 @@
 
         // Redirect to bill generation page
         function generateBill() {
-            window.location.href = "order2.html";
+            window.location.href = "bills.html";
         }
     </script>
 </body>

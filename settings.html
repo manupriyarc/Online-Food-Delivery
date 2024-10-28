@@ -8,7 +8,162 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="settings.css">
+   <style>
+    body
+{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* height: 100vh; */
+    /* position: fixed; */
+    background-color: var(--softGreenColor);
+}
+:root{
+    --primaryColor: #0e6253;
+    --secondrayColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreenColor: #d9f2ee;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+}
+
+.sidebar{
+    height: 100%;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2%;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    font-size: 20px;
+}
+.logo-img
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 8px;
+    margin-top: -35px;
+}
+
+.logo
+{
+    display: flex;
+    left: 15px;
+    margin-left: -30px;
+    align-items: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+.logo-title
+{
+    margin-top: -17px;
+    margin-left: -28px;
+}
+.about-img
+{
+    width: 25px;
+    color: white;
+    
+}
+.sidebar-menus{
+    display: flex;
+    flex-direction: column;
+    margin-top: 31.5px;
+    margin-bottom: 70px;
+}
+.sidebar-menus a , .sidebar-logout a {
+    padding: 5% 8%;
+    margin: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+.sidebar-menus a ion-icon, .sidebar-logout a ion-icon{
+    font-size: 22px;
+    
+}
+.sidebar-menus a:hover , .sidebar-logout a:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    color:black ;
+    transition: 0.5s; 
+}
+/* Container styling */
+.settings-container {
+    background-color: var(--whiteColor); /* Light teal background */
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px;
+    margin: 74px auto;
+    color: var(--primaryColor); /* Dark teal text */
+    margin-left: 42.5%;
+}
+.settings-container:hover
+{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
+}
+
+.settings-container h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #2f776f; /* Title color */
+    text-align: center;
+    
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 17px;
+    color: #004d40;
+}
+
+.form-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid rgb(205, 203, 203); /* Light teal border */
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    /* margin-bottom: 15px; */
+}
+
+.form-group input:focus {
+    border-color: #00796b; /* Darker teal when focused */
+}
+
+/* Button styling */
+.save-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #00796b; /* Dark teal background */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+   </style>
 </head>
 <body>
     <div class="sidebar">
@@ -18,15 +173,15 @@
         </div>
         
         <div class="sidebar-menus">
-            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
-            <a href="order2.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="bills.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
             <a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>About Us</a>
             <a href="finalsearch.html"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>Search</a>
             <a href="contactus.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
             <a href="settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
         </div>
         <div class="sidebar-logout">
-            <a href="startpage.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="index.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
     
         </div>
     </div>
@@ -55,7 +210,31 @@
             <button type="submit" class="save-btn">Save Changes</button>
         </form>
     </div>
-    <script src="settings.js"></script>
+    <script >
+        document.getElementById('settingsForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Validate inputs (optional, can add more validations as needed)
+    if (name && email && password) {
+        alert("Settings updated successfully!");
+
+        // Here, you would send the data to the server if needed
+        // Example: sendDataToServer(name, email, password);
+
+        // Clear the form fields after submission
+        document.getElementById('settingsForm').reset();
+    } else {
+        alert("Please fill out all fields.");
+    }
+    window.location="home.html";
+});
+
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     

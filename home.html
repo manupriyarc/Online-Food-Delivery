@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Online Food Delivery</title>
+    <style>
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --primaryColor: #0e6253;
+    --secondrayColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreenColor: #d9f2ee;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Open Sans',sans-serif;
+    /* font-size: 50px; */
+}
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* font-size: 20px; */
+}
+.sidebar{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2%;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    font-size: 20px;
+}
+.logo-img
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 8px;
+    margin-top: -15px;
+}
+/* .logo-img:hover{
+    background-image: url("/images/logo5.jpg");
+
+} */
+.logo
+{
+    display: flex;
+    left: 15px;
+    margin-left: -30px;
+    align-items: center;
+    gap: 30px;
+    margin-top: 18px;
+}
+.logo-title
+{
+    margin-top: -18px;
+    margin-left: -28px;
+}
+.about-img
+{
+    width: 25px;
+    color: white;
+    
+}
+.sidebar-menus{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-menus a , .sidebar-logout a {
+    padding: 5% 8%;
+    margin: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+.sidebar-menus a ion-icon, .sidebar-logout a ion-icon{
+    font-size: 22px;
+    
+}
+.sidebar-menus a:hover , .sidebar-logout a:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    color:black ;
+    transition: 0.5s; 
+}
+.main
+{
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    padding: 2%;
+    background-color: var(--softGreenColor);
+    margin-left: 300px;
+    margin-top: -7px;
+    /* position: fixed; */
+}
+.main-navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.menu-toggle{
+    display: none;
+}
+.search
+{
+    width: 65%;
+    height: 50px;
+    display: flex;
+    border: none;
+    justify-content: space-around;
+    background-color: var(--whiteColor);
+    border-radius: 20px;
+    /* align-items: center; */
+}
+.search:hover{
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+}
+.search-input{
+    width: 80%;
+    height: 18%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 15px;
+    /* padding-top: 5px; */
+    align-items: center;
+    padding: 0 auto;
+}
+.search-btn
+{
+    /* background-color: var(--secondrayColor); */
+    background-color: rgba(120, 153, 0, 0.699);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width:120px ;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 55px;
+}
+.search-btn:hover
+{
+    background-color: var(--primaryColor);
+}
+.profile
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+}
+
+.cart, .user
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--whiteColor);
+    font-size: 20px;
+    color: var(--primaryColor);
+    text-decoration: none;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 50%;
+}
+.cart:hover, .user:hover{
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+}
+
+.main-highlight
+{
+    margin: 3% 0;
+    padding: 2%;
+    background-color: var(--secondrayColor);
+    border-radius: 8px;
+}
+.main-navbar{
+    margin-top: 15px;
+}
+.logo-menu
+{
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* top: 10px; */
+}
+.menuuu
+{
+    cursor: pointer;
+}
+.menuuu:hover{
+    box-shadow: rgba(65, 165, 211, 0.313) 0px 8px 24px;
+
+}
+.main-header
+{
+    display: flex;
+    width: 100%;
+    /* height: 50px; */
+    justify-content: space-between;
+    align-items: center;
+}
+.main-title
+{
+    font-size: 20px;
+}
+.main-arrow
+{
+    font-size: 25px;
+}
+.highlight-wrapper
+{
+    width: 98%;
+    display: flex;
+    padding: 1%;
+    border-radius: 8px;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    scroll-margin:hidden;
+}
+.highlight-card
+{
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+    width: 75%;
+    height: 60px;
+    gap: 1rem;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: var(--greyColor);
+    cursor: pointer;
+    align-items: center;
+}
+.highlight-img
+{
+    width: 60px;
+    height: 52px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    
+}
+.highlight-desc
+{
+    margin-bottom:-10px;
+    /* align-items: center; */
+}
+.highlight-desc h4
+{   
+    margin-top: -12px;
+    color: var(--primaryColor);
+    margin-bottom: 5px;
+}
+.highlight-desc p
+{
+    color: var(--blackColor);
+    font-size: 15px;
+}
+.rupee
+{
+    display: flex;
+    align-items: center;
+    /* margin-top: 0; */
+}
+.highlight-card:hover{
+    background-color: var(--whiteColor);
+    box-shadow: rgba(177, 177, 177, 0.2) 0px 8px 24px;
+}
+
+.main-menus
+{
+    min-height: 100%;
+    background-color: var(--greyColor);
+    padding: 2%;
+    border-radius: 8px;
+    /* margin-top: 0; */
+    padding-top: 5px;
+   
+}
+.main-filter
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+.back-menus, .next-menus
+{
+    cursor: pointer;
+    font-size: 30px;
+    /* margin-bottom: 25px; */
+    margin-top: 8px;
+}
+.back-menus:hover, .next-menus:hover
+{
+    color:var(--primaryColor);
+}
+.filter-wrapper
+{
+    display: flex;
+    justify-content:flex-start;
+    overflow-x: hidden;
+    width: 100%;
+    height: 110px;
+    gap: 1.25rem;
+}
+.filter-card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 80px;
+    height: 100%;
+    background-color: var(--whiteColor);
+    color: var(--blackColor);
+    border-radius: 8px;
+    border: 1px solid var(--softGreenColor);
+    font-size: 14px;
+    cursor: pointer;
+}
+.filter-icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    /* padding-top: 2px; */
+    margin-top: 5px;
+    font-size: 30px;
+    background-color: var(--softGreenColor);
+    color: var(--primaryColor);
+    border-radius: 8px;
+}
+.filter-card:hover{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+.filter-card:hover  .filter-icon
+{
+    background-color: var(--whiteColor);
+}
+.divider
+{
+    margin: 1rem 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--primaryColor);
+    border: none;
+}
+.main-detail
+{
+    margin: 1rem 0 1.5rem 0;
+
+}
+.detail-wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,250px));
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    gap: 2%;
+    border-radius: 8px;
+}
+.detail-card
+{
+    min-height: 350px;
+    height: 100%;
+    box-flex-group: var(--whiteColor);
+    border-radius: 8px;
+    margin: 1% 0;
+    box-shadow: rgba(177, 177, 177, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+.detail-img
+{
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+}
+.detail-desc
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3%;
+    width: 100%;
+} 
+.deatil-name
+{
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    margin-bottom: 10px;
+}
+/* .deatil-card h4
+{
+    color: var(--primaryColor);
+} */
+
+.detail-sub
+{
+    font-size: 12px;
+    color: var(--darkGreyColor);
+    letter-spacing: 0.6;
+    margin: 1% 0;
+    width: 210px;
+
+}
+
+.prize
+{
+    color: var(--primaryColor);
+
+}
+
+.detail-favorites
+{
+    font-size: 20px;
+    /* margin-top: -12px; */
+
+}
+
+.rupee1
+{
+    margin: 5px;
+    margin-left: 0.3px;
+}
+
+.cart-count
+{
+    font-size: 13px;
+}
+.cart-popup
+{
+ display: none;
+ position: fixed;
+ height: auto;
+ max-width: 300px;
+ max-height: 300px;
+ top: 15%;
+ right: 1%;
+ background-color: var(--whiteColor);
+ font-size: 14px;
+ padding: 20px;
+ border-radius: 8px;
+ z-index: 100;
+ box-shadow: rgb(14,98,83,0.4) 0px 30px 90px;
+
+}
+.cart-popup.active
+{
+    display: block;
+}
+#cart-items
+{
+margin-top:10px ;
+font-size: 12px;
+border-collapse: collapse;
+width: 100%;
+
+}
+#cart-items th
+{
+min-height: 50px;
+background-color: var(--primaryColor);
+color: var(--whiteColor);
+padding: 5px;
+
+}
+
+#cart-items tr:nth-child(even)
+{
+    background-color: var(--softGreenColor);
+
+}
+
+#cart-items td
+{
+    min-width: 50px;
+    padding: 5px;
+    text-align: right;
+}
+
+.cart-popup p
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: 600;
+}
+.cart-close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--blackColor);
+}
+.add-to-cart-btn{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 10px 5px;
+    background-color: var(--primaryColor);
+    border: none;
+    color: var(--whiteColor);
+    border-radius: 8px;
+    padding: 1%;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover{
+    background-color: var(--secondrayColor);
+    color: var(--blackColor);
+
+}
+.order-button
+{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+
+}
+.order-button:hover{
+    background-color: #45a049;
+}
+.foot
+{
+     display: flex;
+     margin-top: 30px;
+     margin-left: 40%;
+     align-items: center;
+     gap: 10px;
+}
+/* mobile view */
+@media screen  and (max-width:640px)
+{
+    .sidebar
+    {
+        display: none;
+    }
+
+    .main
+    {
+        margin-left: 0;
+    }
+
+    .menu-toggle
+    {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: var(--whiteColor);
+        color: var(--primaryColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+
+    .sidebar.active
+    {
+        display: flex;
+        z-index: 10;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="logo.jpg" alt="" class="logo-img">
+             <h1 class="logo-title"> FoodiesHub</h1>
+        </div>
+        
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="bills.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>About Us</a>
+            <a href="finalsearch.html"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>Search</a>
+            <a href="contactus.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div>
+        <div class="sidebar-logout">
+            <a href="index.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    
+        </div>
+    </div>
+    <!-- main -->
+     <div class="main">
+            <div class="main-navbar">
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <!-- <div class="search">
+                    <input type="text"placeholder="what you want to eat?" class="search-input" style="padding-top: 23px;">
+                    <button class="search-btn">Search</button>
+                </div> -->
+            <!-- profile icon on left side of navbar -->
+             <div class="logo-menu">
+                <a href="finalsearch.html"><svg class="menuuu" xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg></a>
+                <h2>Menus</h2>
+            </div>
+                <div class="profile">
+                   
+                    <a class="cart" href="#" onclick="toogleCartPopup()">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+                </div>
+            </div>
+            <!--shopping cart section-->
+            <div id="cart-popup" class="cart-popup">
+                <h4>Shopping Cart</h4>
+                <table id="cart-items">
+                    <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Count</th>
+                            <th>Price(Rs)</th>
+                            <th>Total(Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p>Total(Rs) <span id="cart-total">0.00</span></p>
+                <button id="order-now" class="order-button" onclick="orderBtn()">Order Now</button>
+                <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+            </div>
+
+            <!-- main highlight -->
+             <div class="main-highlight">
+                <!-- title section and arrow -->
+                 <div class="main-header">
+                    <h2 class="main-title">Recommendations</h2>
+                    <div class="main-arrow">
+                        <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                        <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+                    </div>
+                 </div>
+
+                 <div class="highlight-wrapper">
+                    
+                    <div class="highlight-card">
+                        <img class="highlight-img" src="/images/pizza3.jpeg" alt="">
+                        <div class="highlight-desc">
+                            <h4>Delicious Pizza</h4>
+                            <div class="rupee">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p>299</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <img class="highlight-img" src="/images/biryani.jpg" alt="">
+                        <div class="highlight-desc">
+                            <h4>Biryanii</h4>
+                            <div class="rupee">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p>179</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <img class="highlight-img"  src="/images/burger.jpg" alt="">
+                        <div class="highlight-desc">
+                            <h4>Supreme Burger</h4>
+                            <div class="rupee">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p>219</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <img class="highlight-img"  src="/images/momos.jpg" alt="">
+                        <div class="highlight-desc">
+                            <h4>Hot Momos</h4>
+                            <div class="rupee">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p>149</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+             </div>
+     <!-- main menus /order -->
+      <div class="main-menus">
+        <!-- filter section -->
+         <div class="main-filter">
+            <div>
+                <h2 class="main-title">Menu <br>Category </h2>
+                <div class="main-arrow">
+                    <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                    
+                </div>
+            </div>
+            <div class="filter-wrapper">
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="restaurant-outline"></ion-icon>
+                    </div>
+                    <p>All Menus</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="fast-food-outline"></ion-icon>
+                    </div>
+                    <p>Burger</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="pizza-outline"></ion-icon>
+                    </div>
+                    <p>Pizza</p>
+                </div>
+                
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="wine-outline"></ion-icon>
+                    </div>
+                    <p>Wine</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="ice-cream-outline"></ion-icon>
+                    </div>
+                    <p>Ice-Cream</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="cafe-outline"></ion-icon>
+                    </div>
+                    <p>Coffee</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="fish-outline"></ion-icon>
+                    </div>
+                    <p>Sea-Food</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="nutrition-outline"></ion-icon>
+                    </div>
+                    <p>Healthy</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="wine-outline"></ion-icon>
+                    </div>
+                    <p>Mojito</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="cafe-outline"></ion-icon>
+                    </div>
+                    <p>Tea</p>
+                </div>    
+            </div>
+         </div>
+        
+         <hr class="divider">
+          <!-- list of food menus -->
+          <div class="main-detail">
+                <h2 class="main-title" style="padding-left: 20px;">Choose Order</h2>
+                 <!--type mad illeeeee -->
+                <div class="detail-wrapper">
+                    
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/pizza1.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Pizza</h4>
+                                <p class="detail-sub">An Italian dish of flattened bread dough toppings include cheese, pepperoni, sausages, vegetables, olives, tomatoes, herbs, and spices.</p>
+                                <div class="rupee rupee1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                    </svg>
+                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
+                                </div>
+                                <button class="add-to-cart-btn" onclick="addToCart('pizza',199.00)">Add To cart</button>
+                       
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                     </div>
+
+                     <div class="detail-card">
+                        <img class="detail-img" src="/images/momos.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Momos</h4>
+                              <p class="detail-sub">Momos are filled with a variety of fillings, such as vegetables, chicken, pork, or paneer.served with variety of sauces, gravies, and condiments.</p>
+                              <div class="rupee rupee1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                    </svg>
+                                    <p class="price"><i class="fa fa-rupee"></i> 99</p>
+                             </div>
+                             <button class="add-to-cart-btn" onclick="addToCart('momos',99.00)">Add To cart</button>
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/pasta.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Pasta</h4>
+                              <p class="detail-sub">A mixture of durum wheat flour or semolina and water, and sometimes eggs, that is shaped into various forms, dried, and cooked.</p>
+                                <div class="rupee rupee1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                    </svg>
+                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
+                                    
+                                </div>
+                                <button class="add-to-cart-btn" onclick="addToCart('pasta',199.00)">Add To cart</button>
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/biryani.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4> Hyderabadi Biriyani</h4>
+                              <p class="detail-sub">Long-grained rice seasoned with aromatic spices like saffron and stacked with tender and juicy chicken in a rich sauce.</p>
+                              <div class="rupee rupee1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p class="price"><i class="fa fa-rupee"></i> 249</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('Hyderabadi Biriyani',249.00)">Add To cart</button>
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/thali.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Indian  Unlimited Thali</h4>
+                              <p class="detail-sub">Thali can include rice, bread, vegetables, lentils, a sweet dish, raita, pickles, papadum, fried snacks, buttermilk, and payasam.</p>
+                              <div class="rupee rupee1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p class="price"><i class="fa fa-rupee"></i> 499</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('thali',499.00)">Add To cart</button>                            
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/cofee.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Hot Cappuccino</h4>
+                              <p class="detail-sub">Beverage brewed from roasted and ground seeds of tropical evergreen coffee plants of African origin.It is one of the most popular beverages.</p>
+                              <div class="rupee rupee1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p class="price"><i class="fa fa-rupee"></i> 199</p>
+                              </div>
+                              <button class="add-to-cart-btn" onclick="addToCart('cofee',199.00)">Add To cart</button>
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/mojito.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Mojitho</h4>
+                              <p class="detail-sub">Traditional Cuban punch.The cocktail often consists of 5 ingredients:white rum, sugar(traditionally cane juice), lime juice, soda and mint.</p>
+                              <div class="rupee rupee1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p class="price"><i class="fa fa-rupee"></i> 99</p>                                
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('mojito',99.00)">Add To cart</button>                      
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="/images/icecream.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                              <h4>Ice-Cream</h4>
+                              <p class="detail-sub">Ice cream is smooth and semi-solid that Ice cream comes in hundreds of flavors, but the most popular are vanilla, chocolate, and strawberry.</p>
+                              <div class="rupee rupee1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
+                                </svg>
+                                <p class="price"><i class="fa fa-rupee"></i> 199</p>                              
+                      
+                              </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('icecream',199.00)">Add To cart</button>
+                           </div>
+                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+     
+             </div>
+             <footer class="foot">
+                <h4>Copyright 2024</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+                    <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
+                  </svg>
+                  <h4>FoodiesHub</h4>
+
+             </footer>
+<script>
+//showing navbar when click menu on mobile view
+const mobile=document.querySelector('menu-toggle');
+const mobileLink=document.querySelector('sidebar');
+
+mobile.addEventListener("click", function(){
+    mobile.classList.toggle("is-active");
+    mobileLink.classList.toggle("active");
+})
+
+//close menu when you click on
+mobileLink.addEventListener("click",  function(){
+    const menuBars = document.querySelector(".is-active");
+    if(window.innerWidth<=768 && menuBars){
+        mobile.classList.toggle("is-active");
+        mobileLink.classList.toggle("active");
+    }
+})
+
+//move the menu to right and left when you click back and next
+var step=100;
+var stepFilter=60;
+var scrolling=true;
+
+$(".back").bind("click",function(e){
+    e.preventDefault();
+    $(".highlight-wrapper").animate({
+        scrollLeft: "-=" + step + "px"
+    });
+});
+
+$(".next").bind("click", function(e){
+    e.preventDefault();
+    $(".highlight-wrapper").animate({
+        scrollLeft: "+=" + step + "px"
+    });
+});
+
+//when click back and next on menu filters
+$(".back-menus").bind("click", function(e){
+    e.preventDefault();
+    $(".fliter-wrapper").animate({
+        scrollLeft: "-=" + stepFilter  + "px"
+    });
+});
+
+$(".next-menus").bind("click", function(e){
+    e.preventDefault();
+    $(".fliter-wrapper").animate({
+        scrollLeft: "+=" + stepFilter  + "px"
+    });
+});
+
+//for shoping cart part//
+//for cart popup
+function toogleCartPopup(){
+    const cartPopup=document.getElementById('cart-popup');
+    cartPopup.classList.toggle('active');
+}
+
+//for close cart popup 
+function closeCart(){
+const cartPopup=document.getElementById('cart-popup');
+cartPopup.classList.remove('active');
+}
+//for add to cart button 
+function addToCart(itemName,itemPrice){
+    const cartItems = document.getElementById('cart-items').getElementsByTagName('tbody')[0];
+    const existingItem = Array.from(cartItems.getElementsByTagName('tr')).find(item=>item.cells[0].textContent ===itemName);
+    if(existingItem){
+        const itemCount = parseInt(existingItem.querySelector('.item-count').textContent) +1;
+        existingItem.querySelector('.item-count').textContent = itemCount;
+        const itemTotal = parseFloat(existingItem.querySelector('.item-total').textContent) + parseFloat(itemPrice);
+        existingItem.querySelector('.item-total').textContent = itemTotal.toFixed(2);
+
+    }
+    else {
+        const newRow = cartItems.insertRow();
+        newRow.innerHTML =`
+        <td>${itemName}</td>
+        <td class='item-count'>1</td>
+        <td class='item-price'>${itemPrice}</td>
+        <td class='item-total'>${itemPrice}</td>
+         `;
+        
+    }
+    updateCartCountAndTotal();
+
+}
+//update cart count and total
+function updateCartCountAndTotal(){
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const cartItems = document.querySelectorAll('#cart-items tbody tr');
+    let totalCount = 0;
+    let total = 0;
+    cartItems.forEach(item => {
+        const itemCount = parseInt(item.querySelector('.item-count').textContent);
+        const itemTotal = parseFloat(item.querySelector('.item-total').textContent);
+        totalCount +=itemCount;
+        total+= itemTotal;
+    });
+    cartCount.textContent = totalCount;
+    cartTotal.textContent = total.toFixed(2);
+    
+}
+
+
+
+  
+
+// Order Now button click event with data transfer
+function orderBtn() {
+    const cartItems = document.querySelectorAll('#cart-items tbody tr');
+    const orderDetails = Array.from(cartItems).map(item => ({
+        name: item.cells[0].textContent,
+        quantity: item.querySelector('.item-count').textContent,
+        price: item.querySelector('.item-price').textContent,
+        total: item.querySelector('.item-total').textContent
+    }));
+    const totalCost = document.getElementById('cart-total').textContent;
+
+    // Store order data in localStorage
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+    localStorage.setItem('totalCost', totalCost);
+
+    // Redirect to order page
+    window.location.href = "order.html";
+}
+
+
+
+
+
+
+</script>
+
+</body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <!-- adding javascript -->
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      
+</html>

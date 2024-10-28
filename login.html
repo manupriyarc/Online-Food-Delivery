@@ -4,7 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primaryColor: #0e6253;
+    --secondrayColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreenColor: #dcf1ee;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--softGreenColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 350px;
+}
+.login-container:hover
+{
+    box-shadow: rgba(2, 2, 2, 0.2) 0px 8px 24px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -37px;
+    color: var(--primaryColor);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color:var(--primaryColor);
+    color: white;
+    border: none;
+    border-radius:21px;
+    cursor: pointer;
+    margin-top: 15px;
+    /* text-decoration: none; */
+}
+
+button:hover {
+    
+    background-color: black;
+    color: white;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+.logo-img
+{
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 50%;
+        top: 30px;
+        /* margin-top: 15px;
+        transform: translate(16%,-30%); */
+        left: auto;
+}
+.logo-bar
+{
+    align-items: center;
+}
+
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -29,7 +130,31 @@
         </form>
     </div>
     
-    <script src="login.js"></script>
+   <script>
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get form fields
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errormessage");
+
+    // Check if both fields are filled
+    if (!email || !password) {
+        errorMessage.textContent = "Please fill out both email and password fields.";
+        return;
+    }
+
+    // Clear error message if fields are filled
+    errorMessage.textContent = "";
+
+    // Show success alert and redirect to index.html
+    alert("Login successful!");
+    window.location.href = "home.html"; // Redirects to home.html
+});
+
+   </script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </body>
 </html>

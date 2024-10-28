@@ -3,399 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Online Food Delivery</title>
+    <title>FoodiesHub - Fresh Meals Delivered</title>
+   <style>
+    /* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root{
+    --primaryColor: #0e6253;
+    --secondrayColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreenColor: #d9f2ee;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+}
+
+body {
+    background-color: rgb(75, 74, 74);
+    color: #333;
+    line-height: 1.6;
+    /* height: 400px; */
+    position: fixed;
+}
+.logos{
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 13px;
+}
+
+/* Navbar */
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ff6347;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-top: 22px;
+    justify-content: space-between;
+    margin-left:250px;
+    /* font-size: 25px; */
+}
+.nav-name
+{
+    /* font-size: 50px; */
+    color:var(--primaryColor);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left:260px;
+    width: 60px;
+    height: 40px;
+    margin-top: 22px;
+}
+
+.login-btn, .signup-btn {
+    text-decoration: none;
+    padding: 6px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--primaryColor);
+    color: var(--blackColor);
+}
+
+.login-btn
+{
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.signup-btn {
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.login-btn:hover
+{
+    background-color: var(--whiteColor);
+    color: var(--blackColor);
+}
+
+.signup-btn:hover
+{
+    background-color: var(--whiteColor);
+    color: var(--blackColor);
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: rgb(255, 246, 246);
+}
+
+.hero-content {
+    max-width: 50%;
+    height: 100vh;
+    margin-top: 30px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #333;
+}
+
+.hero-content h1 span {
+    color: #ff6347;
+}
+
+.hero-content p {
+    margin: 20px 0;
+    color: #555;
+    font-size: 1.2rem;
+    /* margin-top: 10px; */
+}
+
+.order-btn {
+    background-color: var(--primaryColor);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    /* margin-top: 200px; */
+   
+}
+.order{
+    margin-top: 50px;
+}
+.order-btn:hover
+{
+    background-color: var(--whiteColor);
+    color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+}
+.hero-image img {
+    width: 500px;
+    height: auto;
+   
+}
+
+
+.logo-bar
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img
+{
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+   
+}
+.navbar
+{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.burger-img
+{
+    /* width: 400px; */
+    height: auto;
+    margin-top: -450px;
+    /* margin-left: 500px; */
+    
+}
+   </style>
 </head>
 <body>
-    <!-- sidebar -->
-    <div class="sidebar">
-        <div class="logo">
-            <img src="logo.jpg" alt="" class="logo-img">
-             <h1 class="logo-title"> FoodiesHub</h1>
-        </div>
-        
-        <div class="sidebar-menus">
-            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
-            <a href="order2.html"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
-            <a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>About Us</a>
-            <a href="finalsearch.html"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>Search</a>
-            <a href="contactus.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
-            <a href="settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
-        </div>
-        <div class="sidebar-logout">
-            <a href="startpage.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo-bar">
+                <img src="logo.jpg" alt="" class="logo-img">
+                <div class="logo">Foodies<span>Hub</span></div>
+                <!-- <img src="foodieshublogo.png" class="logos" alt=""> -->
+             </div>
+            <ul class="nav-links">
+                <li><a href="signup.html" style="font-size: 20px; color: #0e6253;">Home</a></li>
+                <li><a href="contactus.html" style="font-size: 20px; color: #0e6253;">Contact</a></li>
+                <li><a href="finalsearch.html" style="font-size: 20px; color: #0e6253;">Menu</a></li>
+                <li><a href="signup.html" style="font-size: 20px; color: #0e6253;">Order</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">LogIn</a>
+                <a href="signup.html" class="signup-btn">SignUp</a>
+            </div>
+        </nav>
+    </header>
     
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get Fresh <span>Meal</span> in Easy Way</h1>
+            <p>We deliver the freshest meals right to your doorstep, crafted with love and care. Order your favorite dishes today and enjoy a delightful dining experience in the comfort of your home.</p>
+            <div class="order">
+             <a href="signup.html" class="order-btn">Order Now</a>
+            </div>
         </div>
-    </div>
-    <!-- main -->
-     <div class="main">
-            <div class="main-navbar">
-                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
-                <!-- <div class="search">
-                    <input type="text"placeholder="what you want to eat?" class="search-input" style="padding-top: 23px;">
-                    <button class="search-btn">Search</button>
-                </div> -->
-            <!-- profile icon on left side of navbar -->
-             <div class="logo-menu">
-                <a href="finalsearch.html"><svg class="menuuu" xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg></a>
-                <h2>Menus</h2>
-            </div>
-                <div class="profile">
-                   
-                    <a class="cart" href="#" onclick="toogleCartPopup()">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    <span class="cart-count" id="cart-count">0</span>
-                    </a>
-                    <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
-                </div>
-            </div>
-            <!--shopping cart section-->
-            <div id="cart-popup" class="cart-popup">
-                <h4>Shopping Cart</h4>
-                <table id="cart-items">
-                    <thead>
-                        <tr>
-                            <th>Items</th>
-                            <th>Count</th>
-                            <th>Price(Rs)</th>
-                            <th>Total(Rs)</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <p>Total(Rs) <span id="cart-total">0.00</span></p>
-                <button id="order-now" class="order-button" onclick="orderBtn()">Order Now</button>
-                <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
-            </div>
+        <div class="hero-image">
+            <img src="supremeburger.jpg" alt="Delicious Burger" class="burger-img">
+        </div>
+    </section>
 
-            <!-- main highlight -->
-             <div class="main-highlight">
-                <!-- title section and arrow -->
-                 <div class="main-header">
-                    <h2 class="main-title">Recommendations</h2>
-                    <div class="main-arrow">
-                        <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
-                        <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
-                    </div>
-                 </div>
+    <script >
+        // JavaScript for additional functionalities (future usage)
+    document.querySelector(".order-btn").addEventListener("click", function() {
+    alert("SignUp first and then place your order!");
+    // window.location.href = "home.html";
 
-                 <div class="highlight-wrapper">
-                    
-                    <div class="highlight-card">
-                        <img class="highlight-img" src="/images/pizza3.jpeg" alt="">
-                        <div class="highlight-desc">
-                            <h4>Delicious Pizza</h4>
-                            <div class="rupee">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p>299</p>
-                            </div>
-                        </div>
-                    </div>
+});
 
-                    <div class="highlight-card">
-                        <img class="highlight-img" src="/images/biryani.jpg" alt="">
-                        <div class="highlight-desc">
-                            <h4>Biryanii</h4>
-                            <div class="rupee">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p>179</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="highlight-card">
-                        <img class="highlight-img"  src="/images/burger.jpg" alt="">
-                        <div class="highlight-desc">
-                            <h4>Supreme Burger</h4>
-                            <div class="rupee">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p>219</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="highlight-card">
-                        <img class="highlight-img"  src="/images/momos.jpg" alt="">
-                        <div class="highlight-desc">
-                            <h4>Hot Momos</h4>
-                            <div class="rupee">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p>149</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-             </div>
-     <!-- main menus /order -->
-      <div class="main-menus">
-        <!-- filter section -->
-         <div class="main-filter">
-            <div>
-                <h2 class="main-title">Menu <br>Category </h2>
-                <div class="main-arrow">
-                    <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
-                    <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
-                    
-                </div>
-            </div>
-            <div class="filter-wrapper">
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="restaurant-outline"></ion-icon>
-                    </div>
-                    <p>All Menus</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="fast-food-outline"></ion-icon>
-                    </div>
-                    <p>Burger</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="pizza-outline"></ion-icon>
-                    </div>
-                    <p>Pizza</p>
-                </div>
-                
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="wine-outline"></ion-icon>
-                    </div>
-                    <p>Wine</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="ice-cream-outline"></ion-icon>
-                    </div>
-                    <p>Ice-Cream</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="cafe-outline"></ion-icon>
-                    </div>
-                    <p>Coffee</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="fish-outline"></ion-icon>
-                    </div>
-                    <p>Sea-Food</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="nutrition-outline"></ion-icon>
-                    </div>
-                    <p>Healthy</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="wine-outline"></ion-icon>
-                    </div>
-                    <p>Mojito</p>
-                </div>
-
-                <div class="filter-card">
-                    <div class="filter-icon">
-                        <ion-icon name="cafe-outline"></ion-icon>
-                    </div>
-                    <p>Tea</p>
-                </div>    
-            </div>
-         </div>
-        
-         <hr class="divider">
-          <!-- list of food menus -->
-          <div class="main-detail">
-                <h2 class="main-title" style="padding-left: 20px;">Choose Order</h2>
-                 <!--type mad illeeeee -->
-                <div class="detail-wrapper">
-                    
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/pizza1.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Pizza</h4>
-                                <p class="detail-sub">An Italian dish of flattened bread dough toppings include cheese, pepperoni, sausages, vegetables, olives, tomatoes, herbs, and spices.</p>
-                                <div class="rupee rupee1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                    </svg>
-                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
-                                </div>
-                                <button class="add-to-cart-btn" onclick="addToCart('pizza',199.00)">Add To cart</button>
-                       
-                            </div>
-                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                     </div>
-
-                     <div class="detail-card">
-                        <img class="detail-img" src="/images/momos.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Momos</h4>
-                              <p class="detail-sub">Momos are filled with a variety of fillings, such as vegetables, chicken, pork, or paneer.served with variety of sauces, gravies, and condiments.</p>
-                              <div class="rupee rupee1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                    </svg>
-                                    <p class="price"><i class="fa fa-rupee"></i> 99</p>
-                             </div>
-                             <button class="add-to-cart-btn" onclick="addToCart('momos',99.00)">Add To cart</button>
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/pasta.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Pasta</h4>
-                              <p class="detail-sub">A mixture of durum wheat flour or semolina and water, and sometimes eggs, that is shaped into various forms, dried, and cooked.</p>
-                                <div class="rupee rupee1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                    </svg>
-                                    <p class="price"><i class="fa fa-rupee"></i> 199</p>
-                                    
-                                </div>
-                                <button class="add-to-cart-btn" onclick="addToCart('pasta',199.00)">Add To cart</button>
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/biryani.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4> Hyderabadi Biriyani</h4>
-                              <p class="detail-sub">Long-grained rice seasoned with aromatic spices like saffron and stacked with tender and juicy chicken in a rich sauce.</p>
-                              <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="price"><i class="fa fa-rupee"></i> 249</p>
-                              </div>
-                              <button class="add-to-cart-btn" onclick="addToCart('Hyderabadi Biriyani',249.00)">Add To cart</button>
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/thali.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Indian  Unlimited Thali</h4>
-                              <p class="detail-sub">Thali can include rice, bread, vegetables, lentils, a sweet dish, raita, pickles, papadum, fried snacks, buttermilk, and payasam.</p>
-                              <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="price"><i class="fa fa-rupee"></i> 499</p>
-                              </div>
-                              <button class="add-to-cart-btn" onclick="addToCart('thali',499.00)">Add To cart</button>                            
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/cofee.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Hot Cappuccino</h4>
-                              <p class="detail-sub">Beverage brewed from roasted and ground seeds of tropical evergreen coffee plants of African origin.It is one of the most popular beverages.</p>
-                              <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="price"><i class="fa fa-rupee"></i> 199</p>
-                              </div>
-                              <button class="add-to-cart-btn" onclick="addToCart('cofee',199.00)">Add To cart</button>
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/mojito.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Mojitho</h4>
-                              <p class="detail-sub">Traditional Cuban punch.The cocktail often consists of 5 ingredients:white rum, sugar(traditionally cane juice), lime juice, soda and mint.</p>
-                              <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="price"><i class="fa fa-rupee"></i> 99</p>                                
-                            </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('mojito',99.00)">Add To cart</button>                      
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <img class="detail-img" src="/images/icecream.jpg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                              <h4>Ice-Cream</h4>
-                              <p class="detail-sub">Ice cream is smooth and semi-solid that Ice cream comes in hundreds of flavors, but the most popular are vanilla, chocolate, and strawberry.</p>
-                              <div class="rupee rupee1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
-                                </svg>
-                                <p class="price"><i class="fa fa-rupee"></i> 199</p>                              
-                      
-                              </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('icecream',199.00)">Add To cart</button>
-                           </div>
-                           <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-                </div>
-     
-             </div>
-             <footer class="foot">
-                <h4>Copyright 2024</h4>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
-                    <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
-                  </svg>
-                  <h4>FoodiesHub</h4>
-
-             </footer>
-
-
+    </script>
 </body>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-     <!-- adding javascript -->
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-      <script src="app.js"></script>
 </html>
